@@ -1,36 +1,104 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📱 Agora Swipe (Frontend Client)
 
-## Getting Started
+A mobile-first, Tinder-style swiping interface built to browse, filter, and save second-hand items scraped from [Agora.co.il](https://www.agora.co.il/).
 
-First, run the development server:
+Designed to work seamlessly as a **Telegram Mini App** or in any modern web browser.
+
+> 🔗 **Note:** This is the **Frontend** repository. The **FastAPI Web Scraper Backend** can be found [here](https://github.com/orishor/agora-scraper).
+
+---
+
+## 🚧 Status: Work In Progress
+
+This project is currently under active development.
+
+### 📋 Roadmap
+
+- [ ] UI overhaul with smoother Framer Motion swipe animations.
+- [ ] Full integration with the MongoDB-powered backend.
+- [ ] Add a dedicated **Saved Items** gallery.
+- [ ] Improve mobile responsiveness and performance.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework:** Next.js (React)
+- **Styling:** Tailwind CSS
+- **Animations:** Framer Motion
+- **Icons:** Lucide React
+
+---
+
+## 🚀 Running Locally
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/agora-swipe.git
+cd agora-swipe
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Set up environment variables
+
+Create a `.env.local` file in the project root (and make sure it's included in your `.gitignore`).
+
+Example:
+
+```env
+NEXT_PUBLIC_API_URL=http://127.0.0.1:8000
+
+# Future frontend secrets can be added here
+```
+
+### 4. Start the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open your browser and visit:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 📲 Running as a Telegram Mini App (Optional)
 
-To learn more about Next.js, take a look at the following resources:
+If you're developing the Telegram Mini App locally, expose your development server using **ngrok**:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+ngrok http 3000
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Use the generated HTTPS URL as your Mini App URL in Telegram.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📁 Project Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```text
+.
+├── app/                # Next.js App Router
+├── components/         # Reusable UI components
+├── public/             # Static assets
+├── styles/             # Global styles
+├── .env.local          # Environment variables (not committed)
+└── README.md
+```
+
+---
+
+## 📌 Notes
+
+- This frontend communicates with the FastAPI backend for item retrieval and swipe actions.
+- Optimized for mobile-first browsing and Telegram Mini Apps.
+- Works in any modern browser during development.
